@@ -13,11 +13,10 @@
   // </div>
   //
 
-//const testTab = 'javascript';
-
 import axios from 'axios';
 
 const Tabs = (topics) => {
+
 
     const tabsTopics = document.createElement('div');
     const tab = document.createElement('div');
@@ -32,9 +31,6 @@ const Tabs = (topics) => {
     return tabsTopics;
   
 }
-
-//console.log(Tabs(testTab));
-
 // END OF THE TABS
 
 // TASK 4
@@ -46,25 +42,21 @@ const Tabs = (topics) => {
   //
 const tabsAppender = (selector) => {
   axios.get('http://localhost:5000/api/topics')
-    .then(resp => {
-      resp.data.topics.forEach((elem) => {
-        const tabEntry = document.querySelector(selector);
-        tabEntry.appendChild(Tabs(elem));
-      })
+  .then(resp => {
+    resp.data.topics.forEach((elem) => {
+      const tabEntry = document.querySelector(selector);
+      tabEntry.appendChild(Tabs(elem));
+    })
     }).catch(err => {
       console.error(err);
     })
 }
-
 // END OF THE TABS APPENDER FUNCTION
 
-export { Tabs, tabsAppender }
-
-/*  topics.forEach((elem) => {
-      const tabEntry = document.querySelector('.tabs-container');
-      tabEntry.appendChild(tabMaker(topics));
-    }) 
-    const tabEntry = document.querySelector(selector);
+/* .then(resp => {
+      resp.data.topics.forEach((elem) => {
+        const tabEntry = document.querySelector(selector);
         tabEntry.appendChild(Tabs(elem));
-    
-    */
+      }) */
+
+export { Tabs, tabsAppender }
