@@ -4,6 +4,8 @@
   // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
+
+
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
   //
   // <div class="card">
@@ -43,6 +45,10 @@ const Card = (article) => {
   cardImg.src = article.authorPhoto;
   authorName.textContent = `By ${article.authorName}`;
 
+  card.addEventListener('click', () => {
+    console.log(article.headline);
+  })
+
   return card;
 }
 // END OF CARD FUNCTION
@@ -59,13 +65,13 @@ const Card = (article) => {
 const cardAppender = (selector) => {
   axios.get('http://localhost:5000/api/articles')
     .then(resp => {
-        const cardElems = (resp.data.articles).map(elem => {
-          console.log(Card(elem));
+        Object.entries(resp.data.articles).forEach(([key, value]) =>{
+          console.log(key);
+          value.forEach(res => {
+            const newCard = Card(res);
+            document.querySelector(selector).appendChild(newCard);
+          })
         })
-        cardElems.forEach(element => {
-          console.log(element);
-        })
-        
     }).catch(err => {
       console.error(err);
     })

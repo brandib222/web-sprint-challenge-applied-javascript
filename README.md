@@ -60,7 +60,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
-    The DOM is the Document Object Model. It is a tree made of node elements that reflect the structure of the HTML.
+    The DOM is the Document Object Model. It is a tree made of node elements that reflects the structure of the HTML.
 2. What is an event?
     An event is a trigger that happens on the page and be tracked, such as a click, scroll, or page load.  
 3. What is an event listener?
