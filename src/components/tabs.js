@@ -1,10 +1,10 @@
 // TASK 3
   // ---------------------
-  // Implement this function which takes an array of strings ("topics") as its only argument.
-  // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
+  // DONE Implement this function which takes an array of strings ("topics") as its only argument.
+  // DONE As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
   // then the function returns the markup below.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup!
-  // The text inside elements will be set using their `textContent` property (NOT `innerText`).
+  // DONE The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
   // <div class="topics">
   //   <div class="tab">javascript</div>
@@ -47,7 +47,7 @@ const tabsAppender = (selector) => {
       const tabEntry = document.querySelector(selector);
       tabEntry.appendChild(Tabs(elem));
     })
-    }).catch(err => {
+  }).catch(err => {
       console.error(err);
     })
 }
