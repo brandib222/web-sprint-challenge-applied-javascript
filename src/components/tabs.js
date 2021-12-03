@@ -31,6 +31,7 @@ const Tabs = (topics) => {
     return tabsTopics;
   
 }
+
 // END OF THE TABS
 
 // TASK 4
