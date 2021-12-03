@@ -45,9 +45,8 @@ const headerAppender = (selector) => {
  
   const entryPoint = document.querySelector(selector);
   entryPoint.appendChild(Header('This is the title', 'This is the date', 'This is the temp'));
-
-
 }
+
 // END OF HEADER APPENDER FUNCTION
 
 export { Header, headerAppender }
